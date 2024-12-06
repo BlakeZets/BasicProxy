@@ -46,7 +46,9 @@ export default {
         
         return fetch(`https://${path[1]}.roblox.com/${path.slice(2).join("/")}${url.search}`, {
             method: request.method,
-            headers: request.headers["content-type"] ? { "Content-Type": request.headers["content-type"] } : {},
+            headers: request.headers["content-type"] ? { "Content-Type": request.headers["content-type"] } : {
+                'Access-Control-Allow-Origin': "*",
+            },
             body: request.body
         });
     }
