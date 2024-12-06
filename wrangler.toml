@@ -9,3 +9,10 @@ send_metrics = false
 # Force enable keeping logs
 [observability]
 enabled = true
+
+[observability.logs]
+enabled = true
+
+
+
+
