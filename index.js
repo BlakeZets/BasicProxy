@@ -44,7 +44,7 @@ export default {
 
         if (!domains.includes(path[1])) return new Response(JSON.stringify({ message: "Specified subdomain is not allowed." }), { status: 401 });
         
-        return fetch(`https://${path[1]}.roblox.com/${path.slice(2).join("/")}${url.search}`, {
+        return fetch(`https://corsproxy.io/?url=https://${path[1]}.roblox.com/${path.slice(2).join("/")}${url.search}`, {
             method: request.method,
             headers: request.headers["content-type"] ? { "Content-Type": request.headers["content-type"] } : {},
             body: request.body
